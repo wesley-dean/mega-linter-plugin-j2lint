@@ -9,6 +9,8 @@ descriptor_flavors:
   - "python"
 file_extensions:
   - ".j2"
+  - ".jinja"
+  - ".jinja2"
 linters:
   - linter_name: j2lint
     name: PYTHON_J2LINT
