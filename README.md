@@ -5,7 +5,7 @@
 [![Scorecard supply-chain security](https://github.com/wesley-dean/mega-linter-plugin-j2lint/actions/workflows/scorecard.yml/badge.svg)](https://github.com/wesley-dean/mega-linter-plugin-j2lint/actions/workflows/scorecard.yml)
 
 
-This is a MegaLinter plugin for Artisa Networks' j2lint)
+This is a MegaLinter plugin for Arista Networks' j2lint)
 
 ## Introduction
 
@@ -13,8 +13,8 @@ This is a MegaLinter plugin for Artisa Networks' j2lint)
 [OxSecurity](https://github.com/oxsecurity) is a linter tool that supports
 various programming languages and file formats. This repository contains a
 MegaLinter plugin for
-[j2lint](https://github.com/artistanetworks/j2lint) by
-[Artisa Networks](https://github.com/artistanetworks/).
+[j2lint](https://github.com/aristanetworks/j2lint) by
+[Arista Networks](https://github.com/aristanetworks/).
 
 The `j2lint` tool is a linter for Jinja2 templates -- a templating language
 used in many configuration management tools, such as Ansible and SaltStack.
@@ -42,5 +42,5 @@ section as well.  For example:
 
 ```yaml
 ENABLE_LINTERS:
-  - "DOCKERFILE_J2LINT"
+  - "PYTHON_J2LINT"
 ```

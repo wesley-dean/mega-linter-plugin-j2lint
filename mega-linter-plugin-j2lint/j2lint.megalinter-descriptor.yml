@@ -1,0 +1,30 @@
+---
+descriptor_id: "PYTHON"
+descriptor_type: "format"
+descriptor_flavors:
+  - "all_flavors"
+  - "ci_light"
+  - "security"
+  - "terraform"
+  - "python"
+file_extensions:
+  - ".j2"
+linters:
+  - linter_name: j2lint
+    name: PYTHON_J2LINT
+    linter_repo: "https://github.com/wesley-dean/mega-linter-plugin-j2lint"
+    linter_url: "https://github.com/wesley-dean/mega-linter-plugin-j2lint"
+    cli_help_arg_name: "--help"
+    cli_version_arg_name: "--version"
+    cli_lint_errors_count: "regex_number"
+    cli_lint_errors_regex: "(?m)^Jinja2 linting finished with ([0-9]+) error.*"
+    cli_lint_warnings_regex: "(?m)^Jinja2 linting finished with [0-9]+ error.* and ([0-9]+) warning.*"
+    cli_lint_mode: "list_of_files"
+    linter_rules_url: "https://github.com/aristanetworks/j2lint#syntax-and-code-style-issues"
+    linter_rules_inline_disable_url: "https://github.com/aristanetworks/j2lint#ignoring-rules"
+    linter_icon_png_url: "https://raw.githubusercontent.com/oxsecurity/megalinter/main/docs/assets/icons/dockerfile.ico"
+    examples:
+      - "j2lint **/*.j2"
+    install:
+      dockerfile:
+        - "RUN pip3 install j2lint"
