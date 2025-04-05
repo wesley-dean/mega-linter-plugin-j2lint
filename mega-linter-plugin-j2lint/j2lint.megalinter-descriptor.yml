@@ -22,7 +22,7 @@ linters:
     cli_lint_mode: "list_of_files"
     linter_rules_url: "https://github.com/aristanetworks/j2lint#syntax-and-code-style-issues"
     linter_rules_inline_disable_url: "https://github.com/aristanetworks/j2lint#ignoring-rules"
-    linter_icon_png_url: "https://raw.githubusercontent.com/oxsecurity/megalinter/main/docs/assets/icons/dockerfile.ico"
+    linter_icon_png_url: "https://raw.githubusercontent.com/oxsecurity/megalinter/main/docs/assets/icons/python.ico"
     examples:
       - "j2lint **/*.j2"
     install:
