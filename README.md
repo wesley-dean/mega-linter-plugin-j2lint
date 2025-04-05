@@ -1,71 +1,46 @@
-# template
+# mega-linter-plugin-j2lint
 
-## Description
+[![MegaLinter](https://github.com/wesley-dean/mega-linter-plugin-j2lint/actions/workflows/megalinter.yml/badge.svg)](https://github.com/wesley-dean/mega-linter-plugin-j2lint/actions/workflows/megalinter.yml)
+[![Dependabot Updates](https://github.com/wesley-dean/mega-linter-plugin-j2lint/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/wesley-dean/mega-linter-plugin-j2lint/actions/workflows/dependabot/dependabot-updates)
+[![Scorecard supply-chain security](https://github.com/wesley-dean/mega-linter-plugin-j2lint/actions/workflows/scorecard.yml/badge.svg)](https://github.com/wesley-dean/mega-linter-plugin-j2lint/actions/workflows/scorecard.yml)
 
-This is a template for a README.md file. It is a markdown file that is used to
-describe a project. It is used to provide information about the project to the
-users and contributors. It is a good practice to have a README.md file in your
-project repository.
+
+This is a MegaLinter plugin for Artisa Networks' j2lint)
+
+## Introduction
+
+[MegaLinter](https://github.com/oxsecurity/megalinter) by
+[OxSecurity](https://github.com/oxsecurity) is a linter tool that supports
+various programming languages and file formats. This repository contains a
+MegaLinter plugin for
+[j2lint](https://github.com/artistanetworks/j2lint) by
+[Artisa Networks](https://github.com/artistanetworks/).
+
+The `j2lint` tool is a linter for Jinja2 templates -- a templating language
+used in many configuration management tools, such as Ansible and SaltStack.
+It checks for common errors and best practices.
 
 ## Usage
 
-You can use this template to create a README.md file for your project. You can
+To use this plugin, you need to have MegaLinter installed. Please refer to the
+[MegaLinter documentation](https://nvuillam.github.io/megalinter/) for
+installation instructions.
 
-- Clone this repository
-- Copy the README.md file to your project repository
-- Edit the file to add information about your project
+### MegaLinter Configuration
 
-### Environment Variables
+To use this plugin, add the following to your MegaLinter configuration:
 
-There are three environment variables that need to be set for this project to
-work correctly:
+```yaml
+PLUGINS:
+  - "https://raw.githubusercontent.com/wesley-dean/mega-linter-plugin-j2lint/refs/heads/main/mega-linter-plugin-j2lint/j2lint.megalinter-descriptor.yml
+```
 
-- `PAT` - Your GitHub Personal Access Token
-- `GPG_PRIVATE_KEY` - Your GPG Private Key
-- `GPG_PRIVATE_KEY_PASSPHRASE` - Your GPG Private Key Passphrase
+Simply adding the plugin to the `PLUGINS` section will cause MegaLiner to read
+the descriptor and make it available for use.  However, depending on your
+MegaLinter configuration, you may need to enable the linter in the `ENABLE_LINTERS`
+section as well.  For example:
 
-The `PAT` environment variable is used by MegaLinter to authenticate with the
-GitHub API. The `GPG_PRIVATE_KEY` and `GPG_PRIVATE_KEY_PASSPHRASE` environment
-variables are used to sign the commits that MegaLinter creates when
-`APPLY_FIXES` is set to `true`.
-
-If the MegaLinter action is disabled, none of these environment variables are
-required.
-
-### Conventional Commits
-
-This project uses Conventional Commits. Conventional Commits is a specification
-for adding human and machine readable meaning to commit messages. It is a
-lightweight convention on top of commit messages. The specification can be
-found at [conventionalcommits.org](https://www.conventionalcommits.org/).
-
-Specifically, this project uses the
-[bitshifted/git-auto-semver](https://github.com/bitshifted/git-auto-semver)
-action to automatically increment the version number based on the commit
-messages:
-
-
-- `build`, `chore`, `ci`, `docs`, `fix`, `perf`, `refactor`, `revert`,
-  `style`, `test`: bump micro (patch) number
-- `feat`: bump minor version number
-- `BREAKING CHANGE`: bump major version number
-
-## License
-
-This project is licensed under the Creative Commons License 1.0 Universal
-License - see the [LICENSE](LICENSE) file for details.
-
-## Contributing
-
-Contributions are welcome. Please read the [CONTRIBUTING.md](CONTRIBUTING.md)
-file for details.
-
-### Code of Conduct
-
-Please read the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file for details on
-the code of conduct.  Long story short, be nice to each other and treat each
-other with respect, compassion, and empathy, especially when you disagree.
-
-## Authors
-
-- Wes Dean
+```yaml
+ENABLE_LINTERS:
+  - "DOCKERFILE_J2LINT"
+```
