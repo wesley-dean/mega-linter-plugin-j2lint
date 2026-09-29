@@ -30,3 +30,10 @@ setup() {
   grep -Fq 'Jinja2 linting finished with ([0-9]+) error' "${DESCRIPTOR}"
   grep -Fq 'and ([0-9]+) warning' "${DESCRIPTOR}"
 }
+
+
+@test "descriptor reads installed version without Rich ANSI formatting" {
+  grep -Fq 'cli_executable_version: "python3"' "${DESCRIPTOR}"
+  grep -Fq 'cli_version_arg_name: ""' "${DESCRIPTOR}"
+  grep -Fq "from importlib.metadata import version; print(version('j2lint'))" "${DESCRIPTOR}"
+}

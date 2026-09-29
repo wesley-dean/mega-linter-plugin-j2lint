@@ -17,8 +17,12 @@ linters:
     linter_repo: "https://github.com/aristanetworks/j2lint"
     linter_url: "https://github.com/aristanetworks/j2lint"
     cli_executable: "j2lint"
+    cli_executable_version: "python3"
     cli_help_arg_name: "--help"
-    cli_version_arg_name: "--version"
+    cli_version_arg_name: ""
+    cli_version_extra_args:
+      - "-c"
+      - "from importlib.metadata import version; print(version('j2lint'))"
     cli_lint_errors_count: "regex_number"
     cli_lint_errors_regex: "(?m)^Jinja2 linting finished with ([0-9]+) error.*"
     cli_lint_warnings_count: "regex_number"
