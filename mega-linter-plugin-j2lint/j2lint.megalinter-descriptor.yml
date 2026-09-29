@@ -12,21 +12,26 @@ file_extensions:
   - ".jinja"
   - ".jinja2"
 linters:
-  - linter_name: j2lint
-    name: PYTHON_J2LINT
-    linter_repo: "https://github.com/wesley-dean/mega-linter-plugin-j2lint"
-    linter_url: "https://github.com/wesley-dean/mega-linter-plugin-j2lint"
+  - linter_name: "j2lint"
+    name: "PYTHON_J2LINT"
+    linter_repo: "https://github.com/aristanetworks/j2lint"
+    linter_url: "https://github.com/aristanetworks/j2lint"
+    cli_executable: "j2lint"
     cli_help_arg_name: "--help"
     cli_version_arg_name: "--version"
     cli_lint_errors_count: "regex_number"
     cli_lint_errors_regex: "(?m)^Jinja2 linting finished with ([0-9]+) error.*"
+    cli_lint_warnings_count: "regex_number"
     cli_lint_warnings_regex: "(?m)^Jinja2 linting finished with [0-9]+ error.* and ([0-9]+) warning.*"
     cli_lint_mode: "list_of_files"
-    linter_rules_url: "https://github.com/aristanetworks/j2lint#syntax-and-code-style-issues"
-    linter_rules_inline_disable_url: "https://github.com/aristanetworks/j2lint#ignoring-rules"
-    linter_icon_png_url: "https://raw.githubusercontent.com/oxsecurity/megalinter/main/docs/assets/icons/python.ico"
+    supported_cli_lint_modes:
+      - "list_of_files"
+    linter_rules_url: "https://github.com/aristanetworks/j2lint/blob/ba3ae401e723b8e359ea675274d6733340f96582/README.md#syntax-and-code-style-issues"
+    linter_rules_inline_disable_url: "https://github.com/aristanetworks/j2lint/blob/ba3ae401e723b8e359ea675274d6733340f96582/README.md#ignoring-rules"
+    linter_icon_png_url: "https://raw.githubusercontent.com/oxsecurity/megalinter/v10.1.0/docs/assets/icons/python.ico"
+    version_extract_regex: "\\d+(?:\\.\\d+){2}"
     examples:
       - "j2lint **/*.j2"
     install:
       dockerfile:
-        - "RUN pip3 install j2lint"
+        - "RUN pip3 install --no-cache-dir j2lint==1.2.0"

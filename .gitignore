@@ -362,3 +362,6 @@ $RECYCLE.BIN/
 .scannerwork
 
 megalinter-reports
+
+# Generated test reports
+test-results/
