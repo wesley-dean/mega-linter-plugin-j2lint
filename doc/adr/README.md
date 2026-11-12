@@ -25,9 +25,17 @@ preserve the repository's existing `vX.Y.Z` tag convention.
 
 See [ADR-002](ADR-002-publish-versioned-descriptor-release-assets.md).
 
+### ADR-003: Consolidate GitHub Actions Dependabot Version Updates
+
+Weekly routine version-update groups admit eligible major, minor, and
+patch changes while security updates and major manual review remain.
+
+See [ADR-003](ADR-003-consolidate-github-actions-dependabot-maintenance.md).
+
 <!-- adrctl-generated-footer -->
 
 ## Architecture Decision Records
 
 * [ADR-001: Pin the Reviewed j2lint 1.2.0 Integration](ADR-001-pin-reviewed-j2lint-1.2.0-integration.md)
 * [ADR-002: Publish Versioned j2lint Descriptor Release Assets](ADR-002-publish-versioned-descriptor-release-assets.md)
+* [ADR-003: Consolidate GitHub Actions Dependabot Version Updates](ADR-003-consolidate-github-actions-dependabot-maintenance.md)
