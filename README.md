@@ -113,13 +113,18 @@ For a local release-style build:
 make build VERSION=0.1.0 BUILD_REF="$(git rev-parse HEAD)"
 ```
 
-## Dependabot Maintenance
+## Dependency Maintenance
 
-Routine GitHub Actions dependency versions remain on a weekly schedule
-with a seven-day cooldown and a wildcard major/minor/patch group. Security
-updates remain separate. Major-containing groups require manual review
-and remain outside the current non-major-only auto-merge path. Existing
-Dependabot PRs are not retroactively consolidated. See [ADR-003](doc/adr/ADR-003-consolidate-github-actions-dependabot-maintenance.md).
+Routine dependency version updates are handled by the centrally hosted
+Jenkins Renovate service, enrolled through root `renovate.json`. The
+existing Dependabot GitHub Actions ecosystem disables scheduled version
+PRs with `open-pull-requests-limit: 0`, while GitHub vulnerability alerts
+and independent Dependabot security-update PRs remain unaffected by this
+version-update configuration. The existing `dependabot[bot]`-scoped
+non-major auto-merge workflow remains for Dependabot security PRs,
+without exempting Renovate from required checks and human approval.
+Existing routine Dependabot PRs are retired with a migration link.
+See [ADR-004](doc/adr/ADR-004-migrate-routine-dependency-updates-to-renovate.md).
 
 ## Repository Governance
 
